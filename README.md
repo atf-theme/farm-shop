@@ -4,5 +4,5 @@ All The Farms (ATF) is the sponsor for this project. They are a data-driven orga
 
 ## The Theme
 
-Preview the theme here: https://atf-theme.myshopify.com/
+Preview the theme here: https://atf-theme.myshopify.com/.
 The theme was built upon Shopify's reference Dawn theme which was customized to better serve farmers.
