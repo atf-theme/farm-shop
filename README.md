@@ -8,5 +8,5 @@ Preview the theme here: https://atf-theme.myshopify.com/<br />
 The theme was built upon Shopify's reference Dawn theme which was customized to better serve farmers.
 
 ## Prototypes
-Wireframe v1
-![alt text](https://imgur.com/EMr3B4m)
+Wireframe v1<br />
+![alt text]https://imgur.com/EMr3B4m
