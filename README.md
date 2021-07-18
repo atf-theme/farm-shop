@@ -9,4 +9,4 @@ The theme was built upon Shopify's reference Dawn theme which was customized to 
 
 ## Prototypes
 Wireframe v1<br />
-![Imgur Image](https://imgur.com/EMr3B4m)
+![Imgur](https://imgur.com/EMr3B4m)
