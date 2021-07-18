@@ -1,28 +1,32 @@
 <link rel="stylesheet" href="{{ 'tabs.css' | asset_url }}" media="print" onload="this.media='all'">
 <script src="{{ 'tabs.js' | asset_url }}"></script>
 <section>
-  <div>
-<ul class="tabs">
-    <li data-tab-target="#home" class="active tab">Home</li>
-    <li data-tab-target="#pricing" class="tab">Pricing</li>
-    <li data-tab-target="#about" class="tab">About</li>
-  </ul>
+<body>
+  <div class="mytabs">
+    <input type="radio" id="tabfree" name="mytabs" checked="checked">
+    <label for="tabfree">Free</label>
+    <div class="tab">
+      <h2>Free</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 
-  <div class="tab-content">
-    <div id="home" data-tab-content class="active">
-      <h1>Home</h1>
-      <p>This is the home</p>
+    <input type="radio" id="tabsilver" name="mytabs">
+    <label for="tabsilver">Silver</label>
+    <div class="tab">
+      <h2>Silver</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
-    <div id="pricing" data-tab-content>
-      <h1>Pricing</h1>
-      <p>Some information on pricing</p>
+
+    <input type="radio" id="tabgold" name="mytabs">
+    <label for="tabgold">Gold</label>
+    <div class="tab">
+      <h2>Gold</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
-    <div id="about" data-tab-content>
-      <h1>About</h1>
-      <p>Let me tell you about me</p>
-    </div>
+
   </div>
-  </div>
+</body>
 </section>
 
 {% schema %}
