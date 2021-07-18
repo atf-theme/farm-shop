@@ -54,6 +54,106 @@
       </div>
     </div>
   {%- endif -%}
+   <div class="collection-wrapper" data-featured-collections-wrapper>
+    {%- for block in section.blocks -%}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <div class="featured-collections__panel{% if forloop.first %} featured-collections__panel--active featured-collections__panel--visible{% endif %}"
+        role="tabpanel"
+        id="{{ block.id }}-tab-panel"
+        aria-labelledby="{{ block.id }}-tab"
+        data-featured-collections-tab-panel
+        data-collection-title="{{ collection.title }}"
+        {% unless collection == blank %}
+          {% if collection.products_count > product_limit %} data-view-more="true"{% endif %}
+        {% endunless %}>
+        <noscript>
+          <h2 class="featured-collections__title">
+            {%- if collection == blank -%}
+              <span class="featured-collections__item-title">{{- 'homepage.onboarding.collection_title' | t -}}</span>
+            {%- else -%}
+              <span class="featured-collections__item-title">{{- collection.title | escape -}}</span>
+              <sup class="featured-collections__product-count">{{- collection.products_count -}}<span class="visually-hidden">{{- 'sections.featured_collections.products' | t | prepend: ' ' -}}</span></sup>
+            {%- endif -%}
+          </h2>
+        </noscript>
+        <div class="collection-info">
+          {%- if collection.image != blank and section.settings.show_description_img -%}
+            <div class="collection-image-wrapper">
+              <div class="collection-image-container">
+                <img srcset="{% if collection.image.width >= 311 %}{{ collection.image | img_url: '311x' }} 311w,{% endif %}
+                    {% if collection.image.width >= 622 %}{{ collection.image | img_url: '622x' }} 622w,{% endif %}
+                    {% if collection.image.width >= 685 %}{{ collection.image | img_url: '685x' }} 685w,{% endif %}
+                    {% if collection.image.width >= 1370 %}{{ collection.image | img_url: '1370x' }} 1370w,{% endif %}
+                    {% if collection.image.width >= 1080 %}{{ collection.image | img_url: '1080x' }} 1080w,{% endif %}
+                    {% if collection.image.width >= 2160 %}{{ collection.image | img_url: '2160x' }} 2160w{% endif %}"
+                  sizes="(min-width: 1200px) 1080px, (min-width: 750px) calc(100vw - 8rem), calc(100vw - 6.4rem)"
+                  src="{{ collection.image | img_url: '1080x' }}"
+                  width="{{ collection.image.width }}"
+                  height="{{ collection.image.height }}"
+                  loading="lazy"
+                  class="media-cover"
+                  alt="{{ collection.title }}">
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if collection.description != blank and section.settings.show_description -%}
+            <div class="featured-collections__description collection-description">
+              <h3 class="featured-collections__description-title h1">{{ collection.title }}</h3>
+              <div class="rte">
+                {{ collection.description }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <ul class="featured-collections__products{% if section.settings.image_style == 'circle' %} featured-collections__products--circle{% endif %} grid grid--2-col-tablet" role="list" data-view-more-content>
+          {%- for product in collection.products limit:product_limit -%}
+            <li class="featured-collections__item" data-view-more-item>
+              {% render 'product-card-list', product: product, show_vendor: false, show_form: section.settings.quick_add %}
+            </li>
+          {%- else -%}
+            {%- for i in (1..4) -%}
+              <li class="featured-collections__item">
+                {% render 'product-card-list' %}
+              </li>
+            {%- endfor -%}
+          {%- endfor -%}
+        </ul>
+        {%- unless collection == blank -%}
+          {%- if collection.products_count > product_limit -%}
+            <p class="visually-hidden" role="status" data-view-more-status-message="{{- 'sections.featured_collections.view_more_status' | t: item_count: '[item_count]', item_max: '[item_max]', collection_title: collection.title -}}" data-view-more-status>
+              {{- 'sections.featured_collections.view_more_status' | t: item_count: product_limit, item_max: collection.products_count, collection_title: collection.title -}}
+            </p>
+            {%- liquid
+              if section.settings.quick_add
+                assign view_more_url = collection.url | append: '?view=quickadd&page=[pagination]'
+              else
+                assign view_more_url = collection.url | append: '?section_id=collection-template&page=[pagination]'
+              endif
+            -%}
+            <button
+              class="featured-collections__view-more button button--floating"
+              aria-label="{{ 'sections.featured_collections.view_more_full' | t: collection_title: collection.title }}"
+              data-view-more-button
+              data-view-more-step="36"
+              data-view-more-current="{{ product_limit }}"
+              data-view-more-max="{{ collection.products_count }}"
+              data-view-more-next="{{ view_more_url }}">
+              {{ 'sections.featured_collections.view_more' | t }}
+            </button>
+            <noscript>
+              <a href="{{ collection.url }}" class="featured-collections__view-more button button--floating">
+                {{ 'sections.featured_collections.view_more' | t }}
+              </a>
+            </noscript>
+          {%- endif -%}
+        {%- endunless -%}
+      </div>
+    {%- else -%}
+      {{- 'homepage.onboarding.no_content' | t -}}
+    {%- endfor -%}
+  </div>
 </section>
 
 {% schema %}
