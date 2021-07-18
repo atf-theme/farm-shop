@@ -7,6 +7,11 @@
 .mytabs input[type="radio"] {
     display: none;
 }
+.mytabs label {
+    padding: 25px;
+    background: #e2e2e2;
+    font-weight: bold;
+}
 
 .mytabs .tab {
     width: 100%;
