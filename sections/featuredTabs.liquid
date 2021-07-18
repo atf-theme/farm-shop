@@ -109,14 +109,8 @@
 
         <ul class="featured-collections__products{% if section.settings.image_style == 'circle' %} featured-collections__products--circle{% endif %} grid grid--2-col-tablet" role="list" data-view-more-content>
           {%- for product in collection.products limit:product_limit -%}
-            <li class="featured-collections__item" data-view-more-item>
-              {% render 'product-card-list', product: product, show_vendor: false, show_form: section.settings.quick_add %}
-            </li>
           {%- else -%}
             {%- for i in (1..4) -%}
-              <li class="featured-collections__item">
-                {% render 'product-card-list' %}
-              </li>
             {%- endfor -%}
           {%- endfor -%}
         </ul>
