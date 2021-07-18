@@ -31,7 +31,7 @@
                   data-featured-collections-block-id="{{ block.id }}"
                   {{ block.shopify_attributes }}>
                   {%- if collection == blank -%}
-                    <span class="featured-collections__item-title">{{- 'homepage.onboarding.collection_title' | t -}}</span>
+                    <span class="featured-collections__item-title">{{- collection.title | escape -}}</span>
                   {%- else -%}
                     <span class="featured-collections__item-title">{{- collection.title | escape -}}</span>
                     <sup class="featured-collections__product-count">{{- collection.products_count -}}<span class="visually-hidden">{{- 'sections.featured_collections.products' | t | prepend: ' ' -}}</span></sup>
