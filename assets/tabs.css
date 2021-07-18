@@ -1,7 +1,3 @@
- body {
-    background: #ccc;
-    font-family: 'Roboto', sans-serif;
-}
 .mytabs {
     display: flex;
     flex-wrap: wrap;
