@@ -1,5 +1,6 @@
 .mytabs {
     display: flex;
+    flex-wrap: wrap;
     margin: 50px auto;
     padding: 25px;
     align-items: center;
