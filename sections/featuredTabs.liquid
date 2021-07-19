@@ -12,7 +12,6 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<body>
 <div class="mytabs">
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
@@ -84,7 +83,6 @@
  	{%- endfor -%}
     {%- endif -%}
   </div>
-</body>
 </section>
 
 {% schema %}
