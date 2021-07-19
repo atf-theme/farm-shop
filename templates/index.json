@@ -83,10 +83,8 @@
         "33d02e01-6b7b-4179-97bc-760678c8b25c"
       ],
       "settings": {
-        "title": "Featured collection",
-        "collection": "",
         "products_to_show": 4,
-        "show_view_all": true,
+        "show_view_all": false,
         "swipe_on_mobile": false,
         "show_secondary_image": false,
         "add_image_padding": false,
