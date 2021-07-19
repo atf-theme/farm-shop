@@ -97,15 +97,37 @@
         "layout": "text_first"
       }
     },
-    "featured_products": {
-      "type": "featured-collection",
+    "16267332593853590a": {
+      "type": "featuredTabs",
+      "blocks": {
+        "16267332593853590a-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16267332593853590a-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "16267332593853590a-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "16267332593853590a-0",
+        "16267332593853590a-1",
+        "16267332593853590a-2"
+      ],
       "settings": {
-        "title": "Featured products",
-        "collection": "",
         "products_to_show": 4,
         "show_view_all": true,
         "swipe_on_mobile": false,
-        "image_ratio": "adapt",
         "show_secondary_image": false,
         "add_image_padding": false,
         "show_vendor": false
@@ -116,6 +138,6 @@
     "farm_intro",
     "about_us",
     "farming_practices",
-    "featured_products"
+    "16267332593853590a"
   ]
 }
