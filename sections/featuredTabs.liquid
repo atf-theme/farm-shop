@@ -16,7 +16,7 @@
 <div class="mytabs">
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
-          <input type="radio" id="tabfree" name="mytabs" checked="checked">
+          <input type="radio" id={{ block.collection.title }}+"tab" name="mytabs" checked="checked">
           <label for="tabfree">Tab1</label>
           <div class="tab">
             <h2>Tab1</h2>
