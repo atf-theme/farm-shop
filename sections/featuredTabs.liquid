@@ -19,27 +19,27 @@
           <input type="radio" id={{ block.settings.collection.title }}"tab" name="mytabs"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
           <label for={{ block.settings.collection.title }}"tab">{{ block.settings.collection.title }}</label>
           <div class="tab">
-			<div class="collection page-width{% if section.settings.swipe_on_mobile == true and block.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
-<div class="{% if section.settings.show_view_all and section.settings.swipe_on_mobile %}title-wrapper-with-link{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if block.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
+<div class="collection page-width{% if section.settings.swipe_on_mobile == true and block.settings.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
+<div class="{% if section.settings.show_view_all and section.settings.swipe_on_mobile %}title-wrapper-with-link{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
   <h2 class="title{% if section.settings.title == blank %} title--no-heading{% endif %}">{{ section.settings.title | escape }}</h2>
 
   {%- if section.settings.show_view_all and section.settings.swipe_on_mobile -%}
-    <a href="{{ block.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
+    <a href="{{ block.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
   {%- endif -%}
 </div>
 
 {%- liquid
-  assign products_to_display = block.collection.all_products_count
+  assign products_to_display = block.settings.collection.all_products_count
 
-  if block.collection.all_products_count > section.settings.products_to_show
+  if block.settings.collection.all_products_count > section.settings.products_to_show
     assign products_to_display = section.settings.products_to_show
   endif
 %}
 
 <slider-component class="slider-mobile-gutter">
-  <ul class="grid grid--2-col{% if products_to_display == 4 or block.collection == blank %} grid--2-col-tablet grid--4-col-desktop{% else %} grid--3-col-tablet{% endif %}{% if products_to_display > 5 %} grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}{% if block.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider slider--tablet grid--peek{% endif %}{% if section.settings.show_view_all == false or block.collection.products.size < section.settings.products_to_show %} negative-margin{% endif %}{% if section.settings.show_view_all and block.collection.products.size > section.settings.products_to_show %} negative-margin--small{% endif %}" role="list">
-    {%- for product in block.collection.products limit: section.settings.products_to_show -%}
-      <li class="grid__item{% if block.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider__slide{% endif %}">
+  <ul class="grid grid--2-col{% if products_to_display == 4 or block.settings.collection == blank %} grid--2-col-tablet grid--4-col-desktop{% else %} grid--3-col-tablet{% endif %}{% if products_to_display > 5 %} grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}{% if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider slider--tablet grid--peek{% endif %}{% if section.settings.show_view_all == false or block.settings.collection.products.size < section.settings.products_to_show %} negative-margin{% endif %}{% if section.settings.show_view_all and block.settings.collection.products.size > section.settings.products_to_show %} negative-margin--small{% endif %}" role="list">
+    {%- for product in block.settings.collection.products limit: section.settings.products_to_show -%}
+      <li class="grid__item{% if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} slider__slide{% endif %}">
         {% render 'product-card',
           product_card_product: product,
           media_size: "square",
@@ -56,8 +56,8 @@
       {%- endfor -%}
     {%- endfor -%}
   </ul>
-  {%- if block.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 -%}
-    <div class="slider-buttons no-js-hidden{% if block.collection.all_products_count < 4 %} medium-hide{% endif %}{% if block.collection.all_products_count < 3 %} small-hide{% endif %}">
+  {%- if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 -%}
+    <div class="slider-buttons no-js-hidden{% if block.settings.collection.all_products_count < 4 %} medium-hide{% endif %}{% if block.settings.collection.all_products_count < 3 %} small-hide{% endif %}">
       <div class="slider-counter caption">
         <span class="slider-counter--current">1</span>
         <span aria-hidden="true"> / </span>
@@ -70,11 +70,11 @@
   {%- endif -%}
 </slider-component>
 
-{%- if section.settings.show_view_all and block.collection.all_products_count > section.settings.products_to_show -%}
+{%- if section.settings.show_view_all and block.settings.collection.all_products_count > section.settings.products_to_show -%}
   <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-    <a href="{{ block.collection.url }}"
+    <a href="{{ block.settings.collection.url }}"
       class="button"
-      aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: block.collection.title }}"
+      aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: block.settings.collection.title }}"
     >
       {{ 'sections.featured_collection.view_all' | t }}
     </a>
