@@ -3,6 +3,8 @@
     flex-wrap: wrap;
     margin: 50px auto;
     padding: 25px;
+    align-items: center;
+    align-content: center;
 }
 .mytabs input[type="radio"] {
     display: none;
@@ -11,8 +13,6 @@
     padding: 25px;
     background: #e2e2e2;
     font-weight: bold;
-    align-items: center;
-    align-content: center;
 }
 
 .mytabs .tab {
