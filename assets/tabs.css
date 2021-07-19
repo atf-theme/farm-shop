@@ -11,6 +11,8 @@
     padding: 25px;
     background: #e2e2e2;
     font-weight: bold;
+    align-items: center;
+    align-content: center;
 }
 
 .mytabs .tab {
@@ -19,8 +21,6 @@
     background: #fff;
     order: 1;
     display: none;
-  	align-items: center;
-    align-content: center;
 }
 .mytabs .tab h2 {
     font-size: 3em;
