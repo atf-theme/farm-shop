@@ -12,7 +12,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<div class="featuredCollection"{{section.id}}>
+<div class={{section.id}}>
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.id }}"tab" name="featuredCollection"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
@@ -84,17 +84,17 @@
     {%- endif -%}
   </div>
 <style>
-  .featuredCollection{{section.id}} {
+  .{{section.id}} {
     display: flex;
     flex-wrap: wrap;
     margin: 50px auto;
     padding: 25px;
  	justify-content: center;
 }
-.featuredCollection{{section.id}} input[type="radio"] {
+.{{section.id}} input[type="radio"] {
     display: none;
 }
-.featuredCollection{{section.id}} label {
+.{{section.id}} label {
   	display: flex;
     padding: 10px;
     background: #E5E4E2;
@@ -102,22 +102,22 @@
   	border-style: inset;
 }
 
-.featuredCollection{{section.id}} .tab {
+.{{section.id}} .tab {
     width: 100%;
     padding: 10px;
     background: #fff;
     order: 1;
     display: none;
 }
-.featuredCollection{{section.id}} .tab h2 {
+.{{section.id}} .tab h2 {
     font-size: 3em;
 }
 
-  .featuredCollection{{section.id}} input[type="radio"]:checked + label {
+  .{{section.id}} input[type="radio"]:checked + label {
     background: #fff;
 }
   
-.featuredCollection{{section.id}} input[type='radio']:checked + label + .tab {
+.{{section.id}} input[type='radio']:checked + label + .tab {
     display: block;
 }
 
