@@ -12,7 +12,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<div class="mytabs">
+<div class={{section.id}}>
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.id }}"tab" name="mytabs"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
