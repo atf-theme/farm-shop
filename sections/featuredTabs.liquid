@@ -16,7 +16,7 @@
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.settings.collection.title }}"tab" name="mytabs"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
-          <label for={{ block.settings.collection.title }}"tab">{{ block.settings.collection.title }}</label>
+          <label for={{ block.settings.collection.title }}"tab">{% if block.settings.collection.title %} {{ block.settings.collection.title }} {% else %} Example Tab {% endif %} </label>
           <div class="tab">
 <div class="collection page-width{% if section.settings.swipe_on_mobile == true and block.settings.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
 <div class="{% if section.settings.show_view_all and section.settings.swipe_on_mobile %}title-wrapper-with-link{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
