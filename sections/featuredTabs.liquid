@@ -16,7 +16,7 @@
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.id }}"tab" name={{section.id}} {%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
           <label for={{ block.id }}"tab">{% if block.settings.collection.title %} {{ block.settings.collection.title }} {% else %} Example Tab {% endif %} </label>
-          <div class="tab">
+          <div class="tabs">
 		<div class="collection page-width{% if section.settings.swipe_on_mobile == true and block.settings.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
 		<div class="{% if section.settings.show_view_all and section.settings.swipe_on_mobile %}title-wrapper-with-link{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if block.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
 
@@ -101,7 +101,7 @@
   	border-style: inset;
 }
 
-.{{section.id}} .tab {
+.{{section.id}} .tabs {
     width: 100%;
     padding: 10px;
     background: #fff;
@@ -113,7 +113,7 @@
     background: #fff;
 }
   
-.{{section.id}} input[type='radio']:checked + label + .tab {
+.{{section.id}} input[type='radio']:checked + label + .tabs {
     display: block;
 }
 
