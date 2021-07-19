@@ -20,6 +20,7 @@
     order: 1;
     display: none;
   	align-items: center;
+    align-content: center;
 }
 .mytabs .tab h2 {
     font-size: 3em;
