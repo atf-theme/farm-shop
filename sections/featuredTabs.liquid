@@ -12,7 +12,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<div class="mytabs">
+<div class="featuredCollection">
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.id }}"tab" name="mytabs"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
@@ -84,17 +84,17 @@
     {%- endif -%}
   </div>
 <style>
-  .mytabs {
+  .featuredCollection {
     display: flex;
     flex-wrap: wrap;
     margin: 50px auto;
     padding: 25px;
  	justify-content: center;
 }
-.mytabs input[type="radio"] {
+.featuredCollection input[type="radio"] {
     display: none;
 }
-.mytabs label {
+.featuredCollection label {
   	display: flex;
     padding: 10px;
     background: #e2e2e2;
@@ -102,22 +102,22 @@
   	border-style: inset;
 }
 
-.mytabs .tab {
+.featuredCollection .tab {
     width: 100%;
     padding: 10px;
     background: #fff;
     order: 1;
     display: none;
 }
-.mytabs .tab h2 {
+.featuredCollection .tab h2 {
     font-size: 3em;
 }
 
-.mytabs input[type='radio']:checked + label + .tab {
+.featuredCollection input[type='radio']:checked + label + .tab {
     display: block;
 }
 
-.mytabs input[type="radio"]:checked + label {
+.featuredCollection input[type="radio"]:checked + label {
     background: #fff;
 }
   </style>
