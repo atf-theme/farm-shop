@@ -4,6 +4,7 @@
     margin: 50px auto;
     padding: 25px;
  	align-items: center;
+  justify-content: center;
 }
 .mytabs input[type="radio"] {
     display: none;
