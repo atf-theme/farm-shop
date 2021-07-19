@@ -12,7 +12,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<div class={{section.id}}>
+<div class={{section.id}}"tabs">
   {%- if section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
           <input type="radio" id={{ block.id }}"tab" name="mytabs"{%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
@@ -83,6 +83,43 @@
  	{%- endfor -%}
     {%- endif -%}
   </div>
+  <style> .{{section.id}}tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    padding: 25px;
+ 	justify-content: center;
+}
+.{{section.id}}tabs input[type="radio"] {
+    display: none;
+}
+.{{section.id}}tabs label {
+  	display: flex;
+    padding: 10px;
+    background: #e2e2e2;
+    font-weight: bold;
+  	border-style: inset;
+}
+
+.{{section.id}}tabs .tab {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    order: 1;
+    display: none;
+}
+.{{section.id}}tabs .tab h2 {
+    font-size: 3em;
+}
+
+.{{section.id}}tabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.{{section.id}}tabs input[type="radio"]:checked + label {
+    background: #fff;
+}
+  </style>
 </section>
 
 {% schema %}
