@@ -10,6 +10,7 @@
     display: none;
 }
 .mytabs label {
+  	display: flex;
     padding: 25px;
     background: #e2e2e2;
     font-weight: bold;
