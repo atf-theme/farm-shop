@@ -19,8 +19,6 @@
 .mytabs .tab {
     width: 100%;
     padding: 10px;
-    background: #fff;
-    order: 1;
     display: none;
 }
 .mytabs .tab h2 {
