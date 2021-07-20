@@ -139,6 +139,7 @@
         "16267424658568395a-0": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/colorful-market-sign.jpg",
             "title": "Farmer's Market",
             "text": "<p>The Beaver Farmer's Market<\/p>"
           }
@@ -146,15 +147,17 @@
         "16267424658568395a-1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "image": "shopify:\/\/shop_images\/small-urban-grocery.jpg",
+            "title": "Grocery Store",
+            "text": "<p>Whole Foods, Super Foods, Example Market<\/p>"
           }
         },
         "16267424658568395a-2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "image": "shopify:\/\/shop_images\/banana-stand.jpg",
+            "title": "Farm Stand",
+            "text": "<p>The Awesome Fruit Stand<\/p>"
           }
         }
       },
