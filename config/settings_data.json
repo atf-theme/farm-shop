@@ -1,5 +1,10 @@
 {
   "current": {
+    "social_twitter_link": "https:\/\/twitter.com\/OregonState",
+    "social_facebook_link": "https:\/\/www.facebook.com\/osubeavers\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/oregonstate\/",
+    "social_snapchat_link": "https:\/\/www.snapchat.com\/add\/oregonstate",
+    "social_youtube_link": "https:\/\/www.youtube.com\/user\/OregonStateUniv",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -45,10 +50,10 @@
         ],
         "settings": {
           "color_scheme": "background-1",
-          "newsletter_enable": true,
+          "newsletter_enable": false,
           "newsletter_heading": "Sign up to our emails",
-          "show_social": false,
-          "enable_country_selector": true,
+          "show_social": true,
+          "enable_country_selector": false,
           "enable_language_selector": true,
           "payment_enable": true
         }
