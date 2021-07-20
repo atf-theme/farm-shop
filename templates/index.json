@@ -12,7 +12,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Farm Address<\/p>"
           }
         }
       },
@@ -74,7 +74,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>A breif explanation about your farming practices. Highlight the great things your farm is doing.<\/p>"
+            "text": "<p>A breif explanation about your farming practices. Picture is where practices would go.<\/p>"
           }
         },
         "button": {
