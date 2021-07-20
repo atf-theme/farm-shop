@@ -176,6 +176,43 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "1626743664481df2ed": {
+      "type": "page",
+      "settings": {
+        "page": ""
+      }
+    },
+    "16267436757ed83263": {
+      "type": "newsletter",
+      "blocks": {
+        "16267436757ed83263-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails"
+          }
+        },
+        "16267436757ed83263-1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "16267436757ed83263-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "16267436757ed83263-0",
+        "16267436757ed83263-1",
+        "16267436757ed83263-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
     }
   },
   "order": [
@@ -183,6 +220,8 @@
     "about_us",
     "farming_practices",
     "16267332593853590a",
-    "16267424658568395a"
+    "16267424658568395a",
+    "1626743664481df2ed",
+    "16267436757ed83263"
   ]
 }
