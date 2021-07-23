@@ -1,15 +1,15 @@
 {
   "sections": {
-    "farm_intro": {
-      "type": "image-with-text",
+    "1627000230ade235de": {
+      "type": "farm-name",
       "blocks": {
-        "heading": {
+        "1627000230ade235de-0": {
           "type": "heading",
           "settings": {
             "heading": "Farm Name"
           }
         },
-        "text": {
+        "1627000230ade235de-1": {
           "type": "text",
           "settings": {
             "text": "<p>Farm Address<\/p>"
@@ -17,8 +17,8 @@
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "1627000230ade235de-0",
+        "1627000230ade235de-1"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/barn-and-paddocks-on-farm.jpg",
@@ -184,7 +184,7 @@
     }
   },
   "order": [
-    "farm_intro",
+    "1627000230ade235de",
     "16267332593853590a",
     "162699922785af6f68",
     "about_us",
