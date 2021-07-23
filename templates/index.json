@@ -27,6 +27,11 @@
         "layout": "text_first"
       }
     },
+    "162699922785af6f68": {
+      "type": "atf-banner",
+      "settings": {
+      }
+    },
     "16267332593853590a": {
       "type": "featuredTabs",
       "blocks": {
@@ -180,6 +185,7 @@
   },
   "order": [
     "farm_intro",
+    "162699922785af6f68",
     "16267332593853590a",
     "about_us",
     "farming_practices",
