@@ -48,7 +48,7 @@
 @media screen and (min-width: 750px) {
   .collection .grid__item,
   .template-search .grid__item {
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
   }
 
   .template-search .grid__item--small {
