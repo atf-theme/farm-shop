@@ -112,6 +112,11 @@
         "layout": "image_first"
       }
     },
+    "16274038890092267c": {
+      "type": "atf-banner",
+      "settings": {
+      }
+    },
     "farming_practices": {
       "type": "image-with-text",
       "blocks": {
@@ -196,6 +201,7 @@
     "farm_intro",
     "16267332593853590a",
     "about_us",
+    "16274038890092267c",
     "farming_practices",
     "16267424658568395a"
   ]
