@@ -77,6 +77,11 @@
         "show_vendor": false
       }
     },
+    "16274038890092267c": {
+      "type": "atf-banner",
+      "settings": {
+      }
+    },
     "about_us": {
       "type": "image-with-text",
       "blocks": {
@@ -110,11 +115,6 @@
         "height": "small",
         "color_scheme": "background-1",
         "layout": "image_first"
-      }
-    },
-    "16274038890092267c": {
-      "type": "atf-banner",
-      "settings": {
       }
     },
     "farming_practices": {
@@ -200,8 +200,8 @@
   "order": [
     "farm_intro",
     "16267332593853590a",
-    "about_us",
     "16274038890092267c",
+    "about_us",
     "farming_practices",
     "16267424658568395a"
   ]
