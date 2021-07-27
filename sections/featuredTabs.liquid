@@ -11,9 +11,20 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
-<div class={{section.id}}>
+  <div class= "productGrid">
   {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'heading' -%}
+              <h1 class = "productGrid_header" {{ block.shopify_attributes }}>
+                {{ block.settings.heading}}
+              </h1>
+  		{%- endcase -%}	
+ 		{%- endfor -%}	
+  <div class={{section.id}}>
       {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'featured_collection' -%}
           <input type="radio" id={{ block.id }}"tab" name={{section.id}} {%- if block== section.blocks[0] -%} checked = "checked"{%- endif -%}>
           <label for={{ block.id }}"tab">{% if block.settings.collection.title %} {{ block.settings.collection.title }} {% else %} Example Tab {% endif %} </label>
           <div class="tabs">
@@ -79,17 +90,55 @@
 {%- endif -%}
 </div>
           </div>
+  		{%- endcase -%}	
  		{%- endfor -%}	
   {%- endif -%}
   </div>
+  </div>
+
 <style>
+  @media screen and (min-width: 1200px){
+  .productGrid{
+   	margin-left: 6.75%;
+    margin-right: 6.75%;
+  }}
+  
+  @media screen and (min-width: 750px) and (max-width:1200px) {
+  .productGrid{
+   	margin-left: 50px;
+    margin-right: 50px;
+  }}
+  
+  @media screen and (max-width: 749px){
+  .productGrid{
+   	margin-left: 15px;
+    margin-right: 15px;
+  }}
+  
+  .productGrid{
+   border-style: groove; 
+  }
+  
+  .productGrid_header {
+    display: flex;
+    justify-content: center;
+    --font-heading-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --font-heading-style: normal;
+    --font-heading-weight: 400;
+  	text-decoration: underline;
+    margin-block-end: 0;
+    margin-block-start:0;
+  }
+  
   .{{section.id}} {
     display: flex;
     flex-wrap: wrap;
     margin: 50px auto;
-    padding: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
  	justify-content: center;
-    background: 252, 249, 230;;
+    background: 252, 249, 230;
 }
 .{{section.id}} input[type="radio"] {
     display: none;
@@ -175,6 +224,19 @@
     }
   ],
   "blocks": [
+        {
+      "type": "heading",
+      "name": "t:sections.image-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Farm Products Shop",
+          "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
     {
       "type": "featured_collection",
       "name": "t:sections.collection-list.blocks.featured_collection.name",
@@ -199,7 +261,9 @@
         },
         {
           "type": "featured_collection"
-        }
+        },
+		{"type": "heading"
+		}
       ]
     }
   ]
